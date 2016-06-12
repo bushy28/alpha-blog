@@ -1,2 +1,3 @@
 THis is the repository for the first aplpha-blog app of the COmpelte Ruby on Rails Developer Course
 make a second change to readmy 
+third times the charm
