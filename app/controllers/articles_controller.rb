@@ -1,5 +1,13 @@
 class ArticlesController < ApplicationController
     
+    #add index/listing action
+    
+    def index
+        @articles = Article.all
+        
+    end
+    
+    
     def new
         @article = Article.new
         
@@ -29,6 +37,31 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
         
     end  
+    
+    
+    #create edit action to edit articles
+    
+    def edit
+        @article= Article.find(params[:id])
+    
+    end
+    
+    #create update action to submit update to database
+    
+    def update
+        @article = Article.find(params[:id])
+        
+        if @article.update(article_params)
+           
+            flash[:notice] = "Your article has been successfully updated"
+            redirect_to article_path(@article)
+        else
+            render 'edit'
+        end
+    end
+    
+    
+    
     
     private
     
