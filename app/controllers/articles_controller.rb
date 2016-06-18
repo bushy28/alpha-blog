@@ -1,5 +1,8 @@
 class ArticlesController < ApplicationController
     
+    # execute set_article method before executing actions
+        before_action :set_article, only: [:edit, :update, :show, :destroy]
+        
     #add index/listing action
     
     def index
@@ -34,22 +37,29 @@ class ArticlesController < ApplicationController
     end
     
     def show
-      @article = Article.find(params[:id])
+      
         
     end  
     
+    def destroy
+    
+    @article.destroy
+    
+    redirect_to articles_path
+    flash[:notice]= "Article was successfully deleted!"
+    end
     
     #create edit action to edit articles
     
     def edit
-        @article= Article.find(params[:id])
+        
     
     end
     
     #create update action to submit update to database
     
     def update
-        @article = Article.find(params[:id])
+        
         
         if @article.update(article_params)
            
@@ -70,5 +80,8 @@ class ArticlesController < ApplicationController
         end    
     
     
+    def set_article
+        @article= Article.find(params[:id])
+    end
     
 end     
