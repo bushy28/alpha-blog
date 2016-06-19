@@ -7,8 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'layouts/navigation' %>
   <%= render 'layouts/messages' %>
-  <%= yield %>
+  <%= yield %> <%# this is where all the other views get served through this command #%>
+  <%# render footer on every page #%>
+  <%= render 'layouts/footer' %>  
+  
+  
+  
 
 </body>
+
 </html>
