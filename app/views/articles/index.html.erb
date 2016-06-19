@@ -1,6 +1,13 @@
-<h1>Listing All Articles</h1>
-<p><%= link_to "Create new article", new_article_path %></p>
-<table>
+<h1 align="center">Listing All Articles</h1>
+
+
+
+<div align="center">
+    
+     <table>
+    <tr>
+        <th><%= link_to "Create new article", new_article_path %></th>
+    </tr>     
     <tr>
         <th>Article ID</th>
         <th>Title</th>
@@ -22,4 +29,7 @@
     
     <% end %>
     
-</table> 
+    </table> 
+</div>
+   
+
