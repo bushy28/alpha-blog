@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>AlphaBlog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <%= render 'layouts/navigation' %>
-  <%= render 'layouts/messages' %>
-  <%= yield %> <%# this is where all the other views get served through this command #%>
-  <%# render footer on every page #%>
-  <%= render 'layouts/footer' %>  
+  <head>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <header>
+    <title>AlphaBlog</title>
+  </header>
+  <body>
+    <%= render 'layouts/navigation' %>
+    <%= render 'layouts/messages' %>
+     
+    <%= yield %> <%# this is where all the other views get served through this command #%>
   
-  
-  
-
-</body>
-
+  </body>
+    <%# render footer on every page #%>
+    <%= render 'layouts/footer' %> 
 </html>
