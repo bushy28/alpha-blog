@@ -17,4 +17,7 @@
   </body>
     <%# render footer on every page #%>
     <%= render 'layouts/footer' %> 
+    <%# include debugging view for development environment #%>
+    <%= debug(params) if Rails.env.development? %>
+    
 </html>
